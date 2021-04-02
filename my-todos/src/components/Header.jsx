@@ -2,8 +2,14 @@ import React from 'react'
 
 const Header = () => {
 const myDate = new Date();
-const date = myDate.toLocaleDateString(); 
-//let time = myDate.toLocaleTimeString();
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+const day = myDate.getDate();
+const year = myDate.getFullYear();
+const month = monthNames[myDate.getMonth()];
+//const date = myDate.toLocaleDateString();
+
+const time = myDate.toLocaleTimeString('en-US', { hour: 'numeric', hour12: true});
 const currentHours = myDate.getHours();
 let message = "";
 const colorChange = {
@@ -30,7 +36,8 @@ if (currentHours < 12) {
           <br />
           <hr />
           <br/>
-          <h4>{date} <span style={colorChange}>{message}</span> </h4>
+          <h4>Hi, <span style={colorChange}>{message}</span> 😊 </h4>
+          <h4>It is currently {day} {month} {year} <em>and</em> <span style={colorChange}>{time}</span></h4>
           
         </div>
     
