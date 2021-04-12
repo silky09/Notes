@@ -10,7 +10,7 @@ const Header = () => {
               <h1>Notes📝</h1>
           </header> 
           <br />
-          <hr />
+           <hr /> 
           <br/>
           <Time />
         </div>
