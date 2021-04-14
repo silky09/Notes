@@ -14,6 +14,7 @@ const Time = () => {
   const time = myDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false});
   const currentHours = myDate.getHours();
   let message = "";
+  
   const colorChange = {
     color: ""
   };

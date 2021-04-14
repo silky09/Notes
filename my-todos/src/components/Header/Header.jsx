@@ -1,5 +1,6 @@
 import React from 'react'
-import Time from './Time'
+import './header.css'
+import Time from '../DateTime/Time'
 
 const Header = () => {
 

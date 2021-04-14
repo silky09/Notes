@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f0f8ff;
+  background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
+  background-size: 24px 24px;
+  padding: 0 16px;
+}
+
+hr {
+  border: 3px dotted rgb(204, 202, 202);
+  border-bottom: none;
+  width: 100%;
+  margin: auto -9px;
+  margin-top: -12px;
+}
+
+h4 {
+  text-align: right;
+  font-size: 13px;
+}
