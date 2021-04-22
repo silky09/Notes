@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react';
+import './time.css';
 
 const Time = () => {
   const myDate = new Date();
@@ -11,8 +12,20 @@ const Time = () => {
   // const month = monthNames[myDate.getMonth()];
   //const date = myDate.toLocaleDateString();
   
-  const time = myDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false});
+  //const time = myDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false});
+  // used hook for adding live clock
+  let now = new Date().toLocaleTimeString();
+
+  const [time, setTime] = useState(now);
+
+  const updateTime = () => {
+  now = new Date().toLocaleTimeString();
+  setTime(now);
+  }
+  setInterval(updateTime, 1000);
+  
   const currentHours = myDate.getHours();
+
   let message = "";
   
   const colorChange = {
