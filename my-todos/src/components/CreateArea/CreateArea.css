@@ -1,0 +1,20 @@
+form {
+  position: relative;
+  width: 480px;
+  padding: 7px;
+  background: #fff;
+  border-radius: 7px;
+  margin: 30px auto 50px auto;
+  box-shadow: 0 1px 7px rgb(128, 128, 128);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: inherit;
+  resize: none;
+}
