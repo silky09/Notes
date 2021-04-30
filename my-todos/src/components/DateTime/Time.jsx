@@ -35,10 +35,10 @@ const Time = () => {
   
   if (currentHours < 12) {
     message = "Good Morning";
-    colorChange.color = "red";
+    colorChange.color = "pink";
   } else if (currentHours < 18) {
     message = "Good Afternoon";
-    colorChange.color = "purple";
+    colorChange.color = "green";
   } else {
     message = "Good Evening";
     colorChange.color = "blue";
