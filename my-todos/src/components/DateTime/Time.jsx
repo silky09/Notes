@@ -35,7 +35,7 @@ const Time = () => {
   
   if (currentHours < 12) {
     message = "Good Morning";
-    colorChange.color = "pink";
+    colorChange.color = "red";
   } else if (currentHours < 18) {
     message = "Good Afternoon";
     colorChange.color = "green";

@@ -3,6 +3,7 @@ import './note.css';
 import DeleteIcon from "@material-ui/icons/Delete";
 
 
+
 const Note = (props) => {
   return (
     <div className="note">
