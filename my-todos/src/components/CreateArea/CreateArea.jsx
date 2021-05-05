@@ -9,28 +9,37 @@ import Fab from '@material-ui/core/Fab';
 // npm install @material-ui/icons
 
 
-const CreateArea = () => {
-  const [note, setNote] = useState({
+const CreateArea = (props) => {
+  const [note, setNote] = useState({  // this const keeps track the title and content
     title: "",
     content: "",
   });
   
-  function onChangeValue(e) {
-    const { name, value } = e.target;
-    setNote(preValue => {
-      return {
-       ...preValue, [name]: value
-     }
-   })
-  }
-  const [add, setAdd] = useState();
+   function InputEvent(e) {
+     const { name, value } = e.target;  // de-structured object
+     setNote ((prevData) => {
+       return {
+         ...prevData,
+         [name]: value // setNote receive the previous data(existing notes)
+       };
+        
+     })
+     // console.log(note);
+   }
 
-  function submitNote(e) {
-    e.preventDefault(); // used for not refreshing the screen
-    setAdd();
-  }
+  // const [add, setAdd] = useState();
 
-  const [isExpanded, setExpanded] = useState(false);
+   function addEvent(e) {
+     e.preventDefault(); // whenever we press the submit button it refresh the page so use >>> e.preventDefault(); for not refreshing the screen
+  //   setAdd();
+     props.passNote(note);
+     setNote({
+       title: "",
+       content: "",
+     });
+   };
+
+  const [isExpanded, setExpanded] = useState(false); // for expanding input area
 
   function expand() {
     setExpanded(true);
@@ -38,19 +47,21 @@ const CreateArea = () => {
   return (
     <div>
       <form className="create-note">
-        {isExpanded ? <input onChange={onChangeValue} name="title" value={note.title} type="text" placeholder="Title" autoComplete="off" /> : null}
+        {isExpanded ? <input name="title" type="text" onChange={InputEvent}
+        value={note.title} placeholder="Title" autoComplete="off" /> : null}
         <p>
           <textarea
-            onChange={onChangeValue}
             onClick={expand}
-            name="content"
+            onChange={InputEvent} // used for hold the value 
             value={note.content}
+            name="content"
             placeholder="Take a note..."
             rows={isExpanded ? 3 : 1}>
             </textarea>
         </p>
-        <Zoom in={isExpanded}> { /* isExpanded is set to false, so add icon will display after click on textarea */ }
-          <Fab onClick={submitNote}><AddIcon /></Fab>
+        {/* isExpanded is set to false, so add icon will display after click on textarea  */}
+        <Zoom in={isExpanded}>
+          <Fab onClick={addEvent}><AddIcon /></Fab> 
         </Zoom>
       </form>
     </div>

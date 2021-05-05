@@ -8,8 +8,8 @@ const Header = () => {
     return (
         <div>
         <header>
-           {logo}   
-           <h1>Notes</h1>
+        {logo}  
+           <h1> Notes</h1>
          </header> 
           <br />
            <hr /> 
