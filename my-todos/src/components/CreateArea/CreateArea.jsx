@@ -39,28 +39,31 @@ const CreateArea = (props) => {
      });
    };
 
-  const [isExpanded, setExpanded] = useState(false); // for expanding input area
+  const [expand, setExpand] = useState(false); // for expanding input area
 
-  function expand() {
-    setExpanded(true);
+  function expandIt() {
+    setExpand(true);
+  }
+  function backToNormal() {
+    setExpand(false);
   }
   return (
-    <div>
+    <div onDoubleClick={backToNormal}>
       <form className="create-note">
-        {isExpanded ? <input name="title" type="text" onChange={InputEvent}
+        {expand ? <input name="title" type="text" onChange={InputEvent}
         value={note.title} placeholder="Title" autoComplete="off" /> : null}
         <p>
           <textarea
-            onClick={expand}
+            onClick={expandIt}
             onChange={InputEvent} // used for hold the value 
             value={note.content}
             name="content"
             placeholder="Take a note..."
-            rows={isExpanded ? 3 : 1}>
+            rows={expand ? 3 : 1}>
             </textarea>
         </p>
-        {/* isExpanded is set to false, so add icon will display after click on textarea  */}
-        <Zoom in={isExpanded}>
+        {/* expand is set to false, so add icon will display after click on textarea  */}
+        <Zoom in={expand}>
           <Fab onClick={addEvent}><AddIcon /></Fab> 
         </Zoom>
       </form>

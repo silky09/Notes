@@ -12,8 +12,17 @@ const App = () => {
     setAddItem((prevData) => {
       return [...prevData, note]; // returning array
     });
-    console.log(note);
+   // console.log("note");
   };
+
+  function deleteItem(id) {
+    //console.log("deleted");
+    setAddItem((prevData) => {
+      return [...prevData.filter((currentVal, index) => {
+        return index !== id 
+      })]
+    })
+  }
     return (
         <div>
         <Header />
@@ -21,12 +30,13 @@ const App = () => {
           passNote={addNote} />
            {/* passNote is a props */}
         
-        {addItem.map((val, index)=>{ // map contains 4 values
+        { addItem.map((val, index)=>{ // map contains 4 values
           return <Note
           key={index}
           id={index}
           title={val.title}
           content={val.content}
+          onDelete={deleteItem}
           />
         })}
         <Footer />
