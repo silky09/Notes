@@ -27,11 +27,10 @@ const CreateArea = (props) => {
      // console.log(note);
    }
 
-  // const [add, setAdd] = useState();
+  
 
    function addEvent(e) {
      e.preventDefault(); // whenever we press the submit button it refresh the page so use >>> e.preventDefault(); for not refreshing the screen
-  //   setAdd();
      props.passNote(note);
      setNote({
        title: "",
@@ -47,9 +46,10 @@ const CreateArea = (props) => {
   function backToNormal() {
     setExpand(false);
   }
+ 
   return (
     <div onDoubleClick={backToNormal}>
-      <form className="create-note">
+      <form className="create-note" >
         {expand ? <input name="title" type="text" onChange={InputEvent}
         value={note.title} placeholder="Title" autoComplete="on"  /> : null}
         <p>
@@ -59,8 +59,8 @@ const CreateArea = (props) => {
             value={note.content}
             name="content"
             placeholder="Take a note..."
-            rows={expand ? 3 : 1}>
-            
+            rows={expand ? 3 : 1}
+             >
             </textarea>
         </p>
         {/* expand is set to false, so add icon will display after click on textarea  */}
