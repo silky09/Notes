@@ -4,7 +4,7 @@ import Time from '../DateTime/Time'
 
 const Header = () => {
      
-  const logo = <img className="header_logo" src="https://i.pinimg.com/originals/16/3a/a6/163aa6aa75341681c25b0160bc67a306.png" alt="task_logo" width="62" height="45" />;
+  const logo = <img className="header_logo" src="https://www.clipartkey.com/mpngs/m/20-204932_pin-check-mark-symbol-png-check-mark-symbol.png" alt="task_logo"  />;
     return (
         <div>
         <header>

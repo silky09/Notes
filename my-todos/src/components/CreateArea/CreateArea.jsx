@@ -51,7 +51,7 @@ const CreateArea = (props) => {
     <div onDoubleClick={backToNormal}>
       <form className="create-note">
         {expand ? <input name="title" type="text" onChange={InputEvent}
-        value={note.title} placeholder="Title" autoComplete="off" /> : null}
+        value={note.title} placeholder="Title" autoComplete="on"  /> : null}
         <p>
           <textarea
             onClick={expandIt}
@@ -60,6 +60,7 @@ const CreateArea = (props) => {
             name="content"
             placeholder="Take a note..."
             rows={expand ? 3 : 1}>
+            
             </textarea>
         </p>
         {/* expand is set to false, so add icon will display after click on textarea  */}
