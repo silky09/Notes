@@ -50,7 +50,7 @@ const CreateArea = (props) => {
   return (
     <div onDoubleClick={backToNormal}>
       <form className="create-note" >
-        {expand ? <input name="title" type="text" onChange={InputEvent}
+        {expand ? <input required name="title" type="text" onChange={InputEvent}
         value={note.title} placeholder="Title" autoComplete="on"  /> : null}
         <p>
           <textarea

@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-weight: var(--font-weight);
+  transition: background-color 0.3s ease-in-out, color 0.6s ease-in-out;
+  background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
+  background-size: 20px 20px;
+  padding: 0 20px;
+}
+
+hr {
+  border: 3px dotted rgb(204, 202, 202);
+  border-bottom: none;
+  width: 100%;
+  margin: auto -9px;
+  margin-top: -12px;
+}
+
+:root {
+  --blue: rgb(26, 57, 87);
+  --white: rgb(236, 236, 236);
+}
+
+body.light {
+  --background-color: var(--white);
+  --text-color: var(--blue);
+  --font-weight: 400;
+}
+
+body.dark {
+  --background-color: var(--blue);
+  /* --text-color: var(--white); */
+  --font-weight: 400;
+}

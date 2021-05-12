@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import './time.css';
+import DarkModePage from '../DarkMode/DarkModePage'
 
 const Time = () => {
   const myDate = new Date();
-  // const monthNames = ["January", "February", "March", "April", "May", "June",
-  //   "July", "August", "September", "October", "November", "December"];
-  
   const day = myDate.getDate();
   const monthNames = myDate.toLocaleString('default', { month: 'long' });
   const year = myDate.getFullYear();
-  // const month = monthNames[myDate.getMonth()];
-  //const date = myDate.toLocaleDateString();
-  
-  //const time = myDate.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false});
   
   // used hook for adding live clock
   let now = new Date().toLocaleTimeString('en-GB');
@@ -45,10 +39,14 @@ const Time = () => {
   }
   
   return (
-    <div>
-     <h4>Hi, <span style={colorChange}>{message}</span> 😊 </h4>
-    <h4>It is currently  <span style={colorChange}>{time}</span>, {day} {monthNames} {year} </h4> 
-    </div>
+    <>
+      <div>
+      {/* <h4><DarkModePage /></h4> */}
+        <h4><DarkModePage /><span style={colorChange}>{message}</span> </h4>
+        <h4>It is currently  <span style={colorChange}>{time}, {day} {monthNames} {year}</span> </h4>
+        
+      </div>
+    </>
   )
 }
 
