@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './time.css';
-import DarkModePage from '../DarkMode/DarkModePage'
+
 
 const Time = () => {
   const myDate = new Date();
@@ -41,9 +41,8 @@ const Time = () => {
   return (
     <>
       <div>
-      {/* <h4><DarkModePage /></h4> */}
-        <h4><DarkModePage /><span style={colorChange}>{message}</span> </h4>
-        <h4>It is currently  <span style={colorChange}>{time}, {day} {monthNames} {year}</span> </h4>
+        <h4><span className="msg_font" style={colorChange} >{message}</span>&nbsp;&nbsp;{day} {monthNames} {year}&nbsp;&nbsp;<span className="msg_font" style={colorChange}>{time}</span></h4>
+        {/* <h4>It is currently  <span style={colorChange}>{time}, {day} {monthNames} {year}</span> </h4> */}
         
       </div>
     </>

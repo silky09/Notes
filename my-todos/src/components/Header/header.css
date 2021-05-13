@@ -13,6 +13,8 @@ header h1 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 60px;
   color: white;
+  /* display: inline-block;
+  position: relative; */
 }
 
 .header_logo {
@@ -23,8 +25,39 @@ header h1 {
   margin-top: 10px;
   margin-right: 4px;
   padding: 0 6px;
+  margin-left: -25px; /*shifted logo to left side */
 }
+/*---------------Tab/iPad--------------------*/
 
-/* .header_logo:hover {
-  background-color: rgb(0, 89, 255);
-} */
+@media (min-width: 769px) and (max-width: 1056px) {
+  header h1 {
+    font-size: 40px;
+  }
+
+  .header_logo {
+    width: 40px;
+    height: 30px;
+    border-radius: 40%;
+    float: left;
+    margin-top: 6px;
+    margin-right: 2px;
+    padding: 0 5px;
+  }
+}
+/* ----------------for mobile----------*/
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 30px;
+    margin-top: 4px;
+  }
+
+  .header_logo {
+    width: 40px;
+    height: 30px;
+    border-radius: 40%;
+    float: left;
+    margin-top: 4px;
+    margin-right: 2px;
+    padding: 0 5px;
+  }
+}

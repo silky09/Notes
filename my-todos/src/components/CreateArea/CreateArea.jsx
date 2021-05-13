@@ -29,7 +29,8 @@ const CreateArea = (props) => {
 
   
 
-   function addEvent(e) {
+  function addEvent(e) {
+     if(note.title !== "" || note.content!== "" ){ // used this condition so that empty notes can be added
      e.preventDefault(); // whenever we press the submit button it refresh the page so use >>> e.preventDefault(); for not refreshing the screen
      props.passNote(note);
      setNote({
@@ -37,21 +38,21 @@ const CreateArea = (props) => {
        content: "",
      });
    };
-
+  }
   const [expand, setExpand] = useState(false); // for expanding input area
 
   function expandIt() {
     setExpand(true);
   }
-  function backToNormal() {
-    setExpand(false);
-  }
+  // function backToNormal() {
+  //   setExpand(false);
+  // }
  
   return (
-    <div onDoubleClick={backToNormal}>
+    <div>
       <form className="create-note" >
-        {expand ? <input required name="title" type="text" onChange={InputEvent}
-        value={note.title} placeholder="Title" autoComplete="on"  /> : null}
+        {expand ? <input name="title" type="text" onChange={InputEvent}
+        value={note.title} placeholder="Title" autoComplete="on" /> : null}
         <p>
           <textarea
             onClick={expandIt}
@@ -60,7 +61,7 @@ const CreateArea = (props) => {
             name="content"
             placeholder="Take a note..."
             rows={expand ? 3 : 1}
-             >
+            >
             </textarea>
         </p>
         {/* expand is set to false, so add icon will display after click on textarea  */}

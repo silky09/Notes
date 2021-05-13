@@ -37,3 +37,23 @@ form.create-note button {
 /* button:hover {
   background-color: rgb(0, 89, 255);
 } */
+
+@media (max-width: 768px) {
+  form.create-note {
+    width: 200px;
+    margin: 20px auto 40px auto;
+  }
+
+  form.create-note input,
+  form.create-note textarea {
+    width: 100%;
+    font-size: 0.8em;
+  }
+
+  form.create-note button {
+    right: 14px;
+    bottom: -15px;
+    width: 30px;
+    height: 30px;
+  }
+}
