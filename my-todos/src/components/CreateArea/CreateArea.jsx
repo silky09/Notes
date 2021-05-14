@@ -59,8 +59,10 @@ const CreateArea = (props) => {
             onChange={InputEvent} // used for hold the value 
             value={note.content}
             name="content"
+            maxlength = {100}
             placeholder="Take a note..."
-            rows={expand ? 3 : 1}
+            rows={expand ? 3 : 1
+            }
             >
             </textarea>
         </p>
